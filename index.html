@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Upsource</title>
+    <meta charset="utf-8">
+
+    <meta name="robots" content="all"/>
+    <meta name="author" content="JetBrains, Inc., https://www.jetbrains.com"/>
+
+        
+<link rel="canonical" href="https://www.jetbrains.com/upsource/eap/" />
+
+
+                    <meta http-equiv="cache-control" content="no-cache"/>  <meta http-equiv="pragma" content="no-cache"/>  <meta http-equiv="expires" content="0"/>     
+        <link rel="stylesheet" type="text/css" media="screen" href="styleset1.css?ver=01102014"/>
+
+
+<link rel="stylesheet" type="text/css" media="handheld" href="/styles2/mobile.css"/>
+<link rel="alternate stylesheet" type="text/css" media="screen"
+      href="/styles2/alternate_styles/alternate_style.css" title="textmode"/>
+
+<noscript>
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles2/noscript.css"/>
+</noscript>
+        <script type="text/javascript" src="/js2/css_browser_selector.js"></script>
+<script type="text/javascript" src="/js2/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js2/jquery/highlight.js"></script>
+<script type="text/javascript" src="/js2/html5.js"></script>
+<script type="text/javascript" src="/js2/mkto_function.js"></script>    <script type="text/javascript" src="/js2/common.js"></script>
+                                           <script type="text/javascript" src="../../js2/cookie.js"></script>                      <script type="text/javascript" src="../../js2/jquery/validate.js"></script>                      <script type="text/javascript">                      $(document).ready(function() {                      var getCookieDownloadForm = getCookie("downloadForm");                                            var btn = $(".btn-flat");                      btn.click(function() {                      var formID = $(this).closest("form").attr('id');                      $("#" + formID).validate({                      submitHandler: function(form) {                      setCookie("downloadForm", formID, 1/(24*60), "/");                      form.submit();                      }                      });                      });                      var path = window.location.href,                      directory = path.substring(0, path.lastIndexOf('/'));                      $( ".returnURL" ).each(function( index ) {                      var value =  $(this).val();                      if (value.indexOf("http") < 0) {                      $(this).val(directory + "/" + value);                      }                      });                      /*if (getCookieDownloadForm) {                      $(".form-download").hide();                      $(".form-thanks").show();                      }*/                                            $('input[name="RegularlyusedJBProducts[]"]').each(function() {                      $(this).change(function() {                      var VCS_value = "";                      $('input[name="RegularlyusedJBProducts[]"]:checked').each(function() {                      VCS_value += $(this).val();                      });                      if (VCS_value.split('Other').length - 1 == 1 && VCS_value.length > 5) VCS_value = "isOther";                      $(".VCS").hide();                      $(".VCS#_" + VCS_value).show();                      });                      });                      $(".btn-disabled").each(function() {                      $(this).change(function() {                      var VCS_value = "";                      $('input[name="RegularlyusedJBProducts[]"]:checked').each(function() {                      VCS_value += $(this).val();                      });                      if ($('#agreement').is(":checked") && VCS_value != "Other") {                      btn.attr("disabled", false);                      btn.removeClass("-disabled");                      } else {                      btn.attr("disabled", true);                      btn.addClass("-disabled");                      }                      });                      });                      var VCS_value = "";                      $('input[name="RegularlyusedJBProducts[]"]:checked').each(function() {                      VCS_value += $(this).val();                      });                      if ($('#agreement').is(":checked") && VCS_value != "Other") {                      btn.removeClass("-disabled");                      btn.attr("disabled", false);                      }                      });                      </script>             
+        
+            <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+
+        </head>
+
+<body id="products" class="upsource download wide" >
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P98"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P98');</script>
+<!-- End Google Tag Manager -->
+
+<header>
+    <div class="container">
+                    <a href="/" class="jb_logo" >JetBrains</a>
+                
+        <ul id="jb_nav">
+            <li class="products"><a href="/products.html" >Products</a></li>
+            <li class="support"><a href="/support/" >Support</a></li>
+            <li class="devnet"><a href="/devnet/" >Community</a></li>
+            <li class="company"><a href="/company/" >Company</a></li>
+            <li class="search">
+                    <form method="get"
+                          action="/search/"
+                          name="formSearch"
+                          class="global-search-form"
+                          id="global-search-form">
+                    <fieldset>
+                        <label><input type="text"
+                                      class="words global-search-form-field search-field"
+                                      id="search-field"
+                                      name="q"
+                                                                            value=""
+                                    >
+                        </label>
+                        <label><input type="submit" class="send global-search-form-submit search-submit"></label>
+                    </fieldset>
+                </form>
+            </li>
+        </ul>
+    </div>
+</header>
+<div id="menu_products">
+    <div class="container">
+    <span class="close" title="Close">&times;</span>
+    <div class="leftfloated block25">
+        <h4>IDEs</h4>
+        <ul>
+            <li class="idea"><a href="/idea"><i class="icon jb-logo _logo-idea _grey _size-1"></i>IntelliJ IDEA</a></li>
+            <li class="ps"><a href="/phpstorm"><i class="icon jb-logo _logo-phpstorm _grey _size-1"></i>PhpStorm</a></li>
+            <li class="pc"><a href="/pycharm"><i class="icon jb-logo _logo-pycharm _grey _size-1"></i>PyCharm</a></li>
+            <li class="ruby"><a href="/ruby"><i class="icon jb-logo _logo-rubymine _grey _size-1"></i>RubyMine</a></li>
+            <li class="ws"><a href="/webstorm"><i class="icon jb-logo _logo-webstorm _grey _size-1"></i>WebStorm</a></li>
+            <li class="objc"><a href="/objc"><i class="icon jb-logo _logo-appcode _grey _size-1"></i>AppCode</a></li>
+        </ul>
+    </div>
+    <div class="leftfloated block20">
+        <h4>.NET</h4>
+        <ul>
+            <li class="rs"><a href="/resharper"><i class="icon jb-logo _logo-resharper _grey _size-1"></i>ReSharper</a></li>
+            <li class="dt"><a href="/profiler"><i class="icon jb-logo _logo-dottrace _grey _size-1"></i>dotTrace</a></li>
+            <li class="dm"><a href="/dotmemory"><i class="icon jb-logo _logo-dotmemory _grey _size-1"></i>dotMemory</a></li>
+            <li class="dc"><a href="/dotcover"><i class="icon jb-logo _logo-dotcover _grey _size-1"></i>dotCover</a></li>
+            <li class="dp"><a href="/dotpeek"><i class="icon jb-logo _logo-dotpeek _grey _size-1"></i>dotPeek</a></li>
+        </ul>
+    </div>
+    <div class="leftfloated block30">
+        <h4>Teamware</h4>
+        <ul>
+            <li class="tc"><a href="/teamcity"><i class="icon jb-logo _logo-teamcity _grey _size-1"></i>TeamCity</a></li>
+            <li class="yt"><a href="/youtrack"><i class="icon jb-logo _logo-youtrack _grey _size-1"></i>YouTrack</a></li>
+        </ul>
+        <h4>Mobile development</h4>
+        <ul>
+            <li class="objc"><a href="/objc"><i class="icon jb-logo _logo-appcode _grey _size-1"></i>AppCode</a></li>
+            <li class="idea"><a href="/idea#community_edition"><i class="icon jb-logo _logo-idea _grey _size-1"></i>IntelliJ IDEA Community Edition</a></li>
+        </ul>
+    </div>
+    <div class="rightfloated block20">
+        <h4>Languages</h4>
+        <ul class="research">
+            <li class="mps"><a href="/mps"><i class="icon jb-logo _logo-mps _grey _size-1"></i>MPS</a></li>
+            <li class="kotlin"><a href="/kotlin"><i class="icon jb-logo _logo-kotlin _grey _size-1"></i>Kotlin</a></li>
+        
+        </ul>
+        <p><a href="/products.html">View all products &raquo;</a></p>
+    </div>
+    <br class="clr"/>
+</div></div>
+<div id="product">
+<div class="container">
+        <a class="header-logo jb-logo _logo-upsource _size-header-logo _inverted" href="/upsource/">Upsource</a>
+    <span class="nav-logo jb-logo _logo-upsource _size-3 _inverted"></span>
+                 
+                                
+</div>
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--start_noindex-->
+<!-- @test -->
+
+<nav>
+    <div class="container">
+        <ul class="nav">
+            
+            <li class="upsource"><a href="/upsource/" title="Overview">Overview</a></li>
+            
+            <li class="browser"><a href="/upsource/browser/" title="Repository Browser">Repository Browser</a></li>
+            
+            <li class="codereview"><a href="/upsource/codereview/" title="Code Review">Code Review</a></li>
+            
+            <li class="documentation"><a href="/upsource/documentation/" title="Getting Started">Getting Started</a></li>
+            
+            <li class="roadmap"><a href="/upsource/roadmap/" title="Roadmap">Roadmap</a></li>
+            
+            <li class="current">Early Access Program</li>
+            
+        </ul>
+    </div>
+</nav>
+
+
+<!--end_noindex-->
+
+
+
+
+
+
+<div id="main">
+    <div class="container">
+                <div id="content">
+                                                                        
+            
+<cache:cache>
+        <h1>JetBrains Upsource Early Access Program</h1>
+        <p>Thank you for interest in Upsource, a new repository browser and code review tool from JetBrains.</p>
+
+        <p>If you would like to <strong>try a pre-release build</strong> of Upsource, please fill out the form below. By providing us with an overview of your development environment, you will help us make better decisions as we plan further development of Upsource.</p>
+
+        <p>Please understand that since this is pre-release software, there's <strong>no guarantee that a EAP build will even run</strong>
+            in your environment.</p>
+
+        <p>That said, we put our best effort into testing EAP builds and we will be happy to work with you to resolve any issues encountered during your participation in Upsource Early Access Program.</p>
+
+        <p>Until Upsource hits final release, it is free to use and doesn't require a license key.</p>
+
+        <br/>
+
+
+        <div class="block85">
+            <form class="form -vertical -size4" method="post" action="http://info.jetbrains.com/index.php/leadCapture/save" id="mktoForm_1323" name="mktoForm_1323">
+            <fieldset>
+                <section class="field -req">
+                    <label class="field-label" for="FirstName">First Name:</label>
+                    <input type="text" class="wide required" id="FirstName" name="FirstName"/>
+                </section>
+                <section class="field -req">
+                    <label class="field-label" for="LastName">Last Name:</label>
+                    <input type="text" class="wide required" id="LastName" name="LastName"/>
+                </section>
+                <section class="field -req">
+                    <label class="field-label" for="Email">Email Address:</label>
+                    <input type="text" class="wide required email" id="Email" name="Email"/>
+                </section>
+                <section class="field -req">
+                    <label class="field-label" for="Company">Organization/or Self-employed:</label>
+                    <input type="text" class="wide required" id="Company" name="Company"/>
+                </section>
+                <section class="field">
+                    <label class="field-label" for="Country">Country:</label>
+                    <select class="wide" id="Country" name="Country" size="1">
+                        
+
+
+
+
+
+
+<option class="blured" value="Australia">Australia</option>
+<option class="blured" value="Canada">Canada</option>
+<option class="blured" value="France">France</option>
+<option class="blured" value="Germany">Germany</option>
+<option class="blured" value="Netherlands">Netherlands</option>
+<option class="blured" value="Switzerland">Switzerland</option>
+<option class="blured" value="United Kingdom">United Kingdom</option>
+<option class="blured" value="United States">United States</option>
+<option value="" class="blured">&nbsp;</option>
+<option class="blured" value="Afghanistan">Afghanistan</option>
+<option class="blured" value="Åland Islands">Åland Islands</option>
+<option class="blured" value="Albania">Albania</option>
+<option class="blured" value="Algeria">Algeria</option>
+<option class="blured" value="American Samoa">American Samoa</option>
+<option class="blured" value="Andorra">Andorra</option>
+<option class="blured" value="Angola">Angola</option>
+<option class="blured" value="Anguilla">Anguilla</option>
+<option class="blured" value="Antarctica">Antarctica</option>
+<option class="blured" value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option class="blured" value="Argentina">Argentina</option>
+<option class="blured" value="Armenia">Armenia</option>
+<option class="blured" value="Aruba">Aruba</option>
+<option class="blured" value="Austria">Austria</option>
+<option class="blured" value="Azerbaijan">Azerbaijan</option>
+<option class="blured" value="Bahamas">Bahamas</option>
+<option class="blured" value="Bahrain">Bahrain</option>
+<option class="blured" value="Bangladesh">Bangladesh</option>
+<option class="blured" value="Barbados">Barbados</option>
+<option class="blured" value="Belarus">Belarus</option>
+<option class="blured" value="Belgium">Belgium</option>
+<option class="blured" value="Belize">Belize</option>
+<option class="blured" value="Benin">Benin</option>
+<option class="blured" value="Bermuda">Bermuda</option>
+<option class="blured" value="Bhutan">Bhutan</option>
+<option class="blured" value="Bolivia">Bolivia</option>
+<option class="blured" value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option class="blured" value="Botswana">Botswana</option>
+<option class="blured" value="Bouvet Island">Bouvet Island</option>
+<option class="blured" value="Brazil">Brazil</option>
+<option class="blured" value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option class="blured" value="Brunei Darussalam">Brunei Darussalam</option>
+<option class="blured" value="Bulgaria">Bulgaria</option>
+<option class="blured" value="Burkina Faso">Burkina Faso</option>
+<option class="blured" value="Burundi">Burundi</option>
+<option class="blured" value="Cambodia">Cambodia</option>
+<option class="blured" value="Cameroon">Cameroon</option>
+<option class="blured" value="Canary Island">Canary Island</option>
+<option class="blured" value="Cape Verde">Cape Verde</option>
+<option class="blured" value="Cayman Islands">Cayman Islands</option>
+<option class="blured" value="Central African Republic">Central African Republic</option>
+<option class="blured" value="Chad">Chad</option>
+<option class="blured" value="Chile">Chile</option>
+<option class="blured" value="China">China</option>
+<option class="blured" value="Christmas Island">Christmas Island</option>
+<option class="blured" value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option class="blured" value="Colombia">Colombia</option>
+<option class="blured" value="Comoros">Comoros</option>
+<option class="blured" value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+<option class="blured" value="Congo, Republic of the">Congo, Republic of the</option>
+<option class="blured" value="Cook Islands">Cook Islands</option>
+<option class="blured" value="Costa Rica">Costa Rica</option>
+<option class="blured" value="Côte d'Ivoire">Côte d'Ivoire</option>
+<option class="blured" value="Croatia">Croatia</option>
+<option class="blured" value="Cuba">Cuba</option>
+<option class="blured" value="Curaçao">Curaçao</option>
+<option class="blured" value="Cyprus">Cyprus</option>
+<option class="blured" value="Czech Republic">Czech Republic</option>
+<option class="blured" value="Denmark">Denmark</option>
+<option class="blured" value="Djibouti">Djibouti</option>
+<option class="blured" value="Dominica">Dominica</option>
+<option class="blured" value="Dominican Republic">Dominican Republic</option>
+<option class="blured" value="Ecuador">Ecuador</option>
+<option class="blured" value="Egypt">Egypt</option>
+<option class="blured" value="El Salvador">El Salvador</option>
+<option class="blured" value="Equatorial Guinea">Equatorial Guinea</option>
+<option class="blured" value="Eritrea">Eritrea</option>
+<option class="blured" value="Estonia">Estonia</option>
+<option class="blured" value="Ethiopia">Ethiopia</option>
+<option class="blured" value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option class="blured" value="Faroe Islands">Faroe Islands</option>
+<option class="blured" value="Fiji">Fiji</option>
+<option class="blured" value="Finland">Finland</option>
+<option class="blured" value="French Guiana">French Guiana</option>
+<option class="blured" value="French Polynesia">French Polynesia</option>
+<option class="blured" value="French Southern Territories">French Southern Territories</option>
+<option class="blured" value="Gabon">Gabon</option>
+<option class="blured" value="Gambia">Gambia</option>
+<option class="blured" value="Georgia">Georgia</option>
+<option class="blured" value="Ghana">Ghana</option>
+<option class="blured" value="Gibraltar">Gibraltar</option>
+<option class="blured" value="Greece">Greece</option>
+<option class="blured" value="Greenland">Greenland</option>
+<option class="blured" value="Grenada">Grenada</option>
+<option class="blured" value="Guadeloupe">Guadeloupe</option>
+<option class="blured" value="Guam">Guam</option>
+<option class="blured" value="Guatemala">Guatemala</option>
+<option class="blured" value="Guernsey">Guernsey</option>
+<option class="blured" value="Guinea">Guinea</option>
+<option class="blured" value="Guinea-Bissau">Guinea-Bissau</option>
+<option class="blured" value="Guyana">Guyana</option>
+<option class="blured" value="Haiti">Haiti</option>
+<option class="blured" value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+<option class="blured" value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option class="blured" value="Honduras">Honduras</option>
+<option class="blured" value="Hong Kong">Hong Kong</option>
+<option class="blured" value="Hungary">Hungary</option>
+<option class="blured" value="Iceland">Iceland</option>
+<option class="blured" value="India">India</option>
+<option class="blured" value="Indonesia">Indonesia</option>
+<option class="blured" value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option class="blured" value="Iraq">Iraq</option>
+<option class="blured" value="Ireland">Ireland</option>
+<option class="blured" value="Isle of Man">Isle of Man</option>
+<option class="blured" value="Israel">Israel</option>
+<option class="blured" value="Italy">Italy</option>
+<option class="blured" value="Jamaica">Jamaica</option>
+<option class="blured" value="Japan">Japan</option>
+<option class="blured" value="Jersey">Jersey</option>
+<option class="blured" value="Jordan">Jordan</option>
+<option class="blured" value="Kazakhstan">Kazakhstan</option>
+<option class="blured" value="Kenya">Kenya</option>
+<option class="blured" value="Kiribati">Kiribati</option>
+<option class="blured" value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+<option class="blured" value="Korea, Republic of">Korea, Republic of</option>
+<option class="blured" value="Kosovo, Republic of">Kosovo, Republic of</option>
+<option class="blured" value="Kuwait">Kuwait</option>
+<option class="blured" value="Kyrgyzstan">Kyrgyzstan</option>
+<option class="blured" value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+<option class="blured" value="Latvia">Latvia</option>
+<option class="blured" value="Lebanon">Lebanon</option>
+<option class="blured" value="Lesotho">Lesotho</option>
+<option class="blured" value="Liberia">Liberia</option>
+<option class="blured" value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+<option class="blured" value="Liechtenstein">Liechtenstein</option>
+<option class="blured" value="Lithuania">Lithuania</option>
+<option class="blured" value="Luxembourg">Luxembourg</option>
+<option class="blured" value="Macao">Macao</option>
+<option class="blured" value="Macedonia, the Former Yugoslav Republic of">Macedonia, the Former Yugoslav Republic of</option>
+<option class="blured" value="Madagascar">Madagascar</option>
+<option class="blured" value="Malawi">Malawi</option>
+<option class="blured" value="Malaysia">Malaysia</option>
+<option class="blured" value="Maldives">Maldives</option>
+<option class="blured" value="Mali">Mali</option>
+<option class="blured" value="Malta">Malta</option>
+<option class="blured" value="Marshall Islands">Marshall Islands</option>
+<option class="blured" value="Martinique">Martinique</option>
+<option class="blured" value="Mauritania">Mauritania</option>
+<option class="blured" value="Mauritius">Mauritius</option>
+<option class="blured" value="Mayotte">Mayotte</option>
+<option class="blured" value="Mexico">Mexico</option>
+<option class="blured" value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option class="blured" value="Moldova, Republic of">Moldova, Republic of</option>
+<option class="blured" value="Monaco">Monaco</option>
+<option class="blured" value="Mongolia">Mongolia</option>
+<option class="blured" value="Montenegro">Montenegro</option>
+<option class="blured" value="Montserrat">Montserrat</option>
+<option class="blured" value="Morocco">Morocco</option>
+<option class="blured" value="Mozambique">Mozambique</option>
+<option class="blured" value="Myanmar">Myanmar</option>
+<option class="blured" value="Namibia">Namibia</option>
+<option class="blured" value="Nauru">Nauru</option>
+<option class="blured" value="Nepal">Nepal</option>
+<option class="blured" value="Netherlands Antilles">Netherlands Antilles</option>
+<option class="blured" value="New Caledonia">New Caledonia</option>
+<option class="blured" value="New Zealand">New Zealand</option>
+<option class="blured" value="Nicaragua">Nicaragua</option>
+<option class="blured" value="Niger">Niger</option>
+<option class="blured" value="Nigeria">Nigeria</option>
+<option class="blured" value="Niue">Niue</option>
+<option class="blured" value="Norfolk Island">Norfolk Island</option>
+<option class="blured" value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option class="blured" value="Norway">Norway</option>
+<option class="blured" value="Oman">Oman</option>
+<option class="blured" value="Pakistan">Pakistan</option>
+<option class="blured" value="Palau">Palau</option>
+<option class="blured" value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+<option class="blured" value="Panama">Panama</option>
+<option class="blured" value="Papua New Guinea">Papua New Guinea</option>
+<option class="blured" value="Paraguay">Paraguay</option>
+<option class="blured" value="Peru">Peru</option>
+<option class="blured" value="Philippines">Philippines</option>
+<option class="blured" value="Pitcairn">Pitcairn</option>
+<option class="blured" value="Poland">Poland</option>
+<option class="blured" value="Portugal">Portugal</option>
+<option class="blured" value="Puerto Rico">Puerto Rico</option>
+<option class="blured" value="Qatar">Qatar</option>
+<option class="blured" value="Reunion">Reunion</option>
+<option class="blured" value="Romania">Romania</option>
+<option class="blured" value="Russian Federation" selected>Russian Federation</option>
+<option class="blured" value="Rwanda">Rwanda</option>
+<option class="blured" value="Saint Helena">Saint Helena</option>
+<option class="blured" value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option class="blured" value="Saint Lucia">Saint Lucia</option>
+<option class="blured" value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option class="blured" value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+<option class="blured" value="Samoa">Samoa</option>
+<option class="blured" value="San Marino">San Marino</option>
+<option class="blured" value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option class="blured" value="Saudi Arabia">Saudi Arabia</option>
+<option class="blured" value="Senegal">Senegal</option>
+<option class="blured" value="Serbia">Serbia</option>
+<option class="blured" value="Seychelles">Seychelles</option>
+<option class="blured" value="Sierra Leone">Sierra Leone</option>
+<option class="blured" value="Singapore">Singapore</option>
+<option class="blured" value="Slovakia">Slovakia</option>
+<option class="blured" value="Slovenia">Slovenia</option>
+<option class="blured" value="Solomon Islands">Solomon Islands</option>
+<option class="blured" value="Somalia">Somalia</option>
+<option class="blured" value="South Africa">South Africa</option>
+<option class="blured" value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+<option class="blured" value="Spain">Spain</option>
+<option class="blured" value="Sri Lanka">Sri Lanka</option>
+<option class="blured" value="Sudan">Sudan</option>
+<option class="blured" value="Suriname">Suriname</option>
+<option class="blured" value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option class="blured" value="Swaziland">Swaziland</option>
+<option class="blured" value="Sweden">Sweden</option>
+<option class="blured" value="Syrian Arab Republic">Syrian Arab Republic</option>
+<option class="blured" value="Taiwan">Taiwan</option>
+<option class="blured" value="Tajikistan">Tajikistan</option>
+<option class="blured" value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option class="blured" value="Thailand">Thailand</option>
+<option class="blured" value="Timor-Leste">Timor-Leste</option>
+<option class="blured" value="Togo">Togo</option>
+<option class="blured" value="Tokelau">Tokelau</option>
+<option class="blured" value="Tonga">Tonga</option>
+<option class="blured" value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option class="blured" value="Tunisia">Tunisia</option>
+<option class="blured" value="Turkey">Turkey</option>
+<option class="blured" value="Turkmenistan">Turkmenistan</option>
+<option class="blured" value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option class="blured" value="Tuvalu">Tuvalu</option>
+<option class="blured" value="Uganda">Uganda</option>
+<option class="blured" value="Ukraine">Ukraine</option>
+<option class="blured" value="United Arab Emirates">United Arab Emirates</option>
+<option class="blured" value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option class="blured" value="Uruguay">Uruguay</option>
+<option class="blured" value="Uzbekistan">Uzbekistan</option>
+<option class="blured" value="Vanuatu">Vanuatu</option>
+<option class="blured" value="Venezuela">Venezuela</option>
+<option class="blured" value="Viet Nam">Viet Nam</option>
+<option class="blured" value="Virgin Islands, British">Virgin Islands, British</option>
+<option class="blured" value="Virgin Islands, U.s.">Virgin Islands, U.s.</option>
+<option class="blured" value="Wallis and Futuna">Wallis and Futuna</option>
+<option class="blured" value="Western Sahara">Western Sahara</option>
+<option class="blured" value="Yemen">Yemen</option>
+<option class="blured" value="Zambia">Zambia</option>
+<option class="blured" value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                </section>
+                <section class="field">
+                    <label class="field-label" for="Title">Job Title:</label>
+                    <input type="text" class="wide" id="Title" name="Title"/>
+                </section>
+                <br/>
+                <section class="field">
+                    <label class="field-label">Which of the following JetBrains tools are you or your team currently using?</label>
+                    <label for="mktoCheckbox_2832_0" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_0" name="used_product[]" class="checkbox__input" value="IntelliJ IDEA"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        IntelliJ IDEA
+                    </label>
+                    <label for="mktoCheckbox_2832_1" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_1" name="used_product[]" class="checkbox__input" value="PhpStorm"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        PhpStorm
+                    </label>
+                    <label for="mktoCheckbox_2832_2" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_2" name="used_product[]" class="checkbox__input" value="PyCharm"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        PyCharm
+                    </label>
+                    <label for="mktoCheckbox_2832_3" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_3" name="used_product[]" class="checkbox__input" value="RubyMine"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        RubyMine
+                    </label>
+                    <label for="mktoCheckbox_2832_4" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_4" name="used_product[]" class="checkbox__input" value="WebStorm"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        WebStorm
+                    </label>
+                    <label for="mktoCheckbox_2832_5" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_5" name="used_product[]" class="checkbox__input" value="AppCode"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        AppCode
+                    </label>
+                    <label for="mktoCheckbox_2832_6" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_6" name="used_product[]" class="checkbox__input" value="ReSharper"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        ReSharper
+                    </label>
+                    <label for="mktoCheckbox_2832_7" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_7" name="used_product[]" class="checkbox__input" value="TeamCity"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        TeamCity
+                    </label>
+                    <label for="mktoCheckbox_2832_8" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_8" name="used_product[]" class="checkbox__input" value="YouTrack"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        YouTrack
+                    </label>
+                    <label for="mktoCheckbox_2832_9" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2832_9" name="used_product[]" class="checkbox__input" value="Other"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Other
+                    </label>
+                </section>
+                <br/>
+                <section class="field -req checkboxes">
+                    <label class="field-label">What programming languages/technologies are you or your team currently using?</label>
+                    <label for="mktoCheckbox_2833_0" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_0" name="Used_Languages[]" class="required checkbox__input" value=".NET Framework (C#, VB.NET or F#)"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        .NET Framework (C#, VB.NET or F#)
+                    </label>
+                    <label for="mktoCheckbox_2833_1" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_1" name="Used_Languages[]" class="required checkbox__input" value="Java"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Java
+                    </label>
+                    <label for="mktoCheckbox_2833_2" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_2" name="Used_Languages[]" class="required checkbox__input" value="C or C++"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        C or C++
+                    </label>
+                    <label for="mktoCheckbox_2833_3" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_3" name="Used_Languages[]" class="required checkbox__input" value="PHP"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        PHP
+                    </label>
+                    <label for="mktoCheckbox_2833_4" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_4" name="Used_Languages[]" class="required checkbox__input" value="Python"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Python
+                    </label>
+                    <label for="mktoCheckbox_2833_5" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_5" name="Used_Languages[]" class="required checkbox__input" value="JavaScript"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        JavaScript
+                    </label>
+                    <label for="mktoCheckbox_2833_6" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_6" name="Used_Languages[]" class="required checkbox__input" value="Objective-C or Swift"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Objective-C or Swift
+                    </label>
+                    <label for="mktoCheckbox_2833_7" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_7" name="Used_Languages[]" class="required checkbox__input" value="Ruby"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Ruby
+                    </label>
+                    <label for="mktoCheckbox_2833_8" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2833_8" name="Used_Languages[]" class="required checkbox__input" value="Other"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Other
+                    </label>
+                </section>
+                <br/>
+                <section class="field -req checkboxes">
+                    <label class="field-label">What version control systems (VCS) are you or your team currently using?</label>
+                    <label for="mktoCheckbox_2845_0" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2845_0" name="RegularlyusedJBProducts[]" class="btn-disabled required checkbox__input" value="Git"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Git
+                    </label>
+                    <label for="mktoCheckbox_2845_1" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2845_1" name="RegularlyusedJBProducts[]" class="btn-disabled required checkbox__input" value="Subversion (SVN)"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Subversion (SVN)
+                    </label>
+                    <label for="mktoCheckbox_2845_2" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2845_2" name="RegularlyusedJBProducts[]" class="btn-disabled required checkbox__input" value="Mercurial (Hg)"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Mercurial (Hg)
+                    </label>
+                    <label for="mktoCheckbox_2845_3" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2845_3" name="RegularlyusedJBProducts[]" class="btn-disabled required checkbox__input" value="Perforce"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Perforce
+                    </label>
+                    <label for="mktoCheckbox_2845_4" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2845_4" name="RegularlyusedJBProducts[]" class="btn-disabled required checkbox__input" value="Other"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Other
+                    </label>
+                    <p class="VCS hide comment" id="_Other">Unfortunately Upsource only supports Git, Mercurial, Subversion and Perforce. If you're exclusively using a version control system other than the 4 supported systems, you will not be able to use Upsource at all.</p>
+                    <p class="VCS hide comment" id="_isOther">Please note that you will only be able to use Upsource with Git, Mercurial, Subversion and Perforce repositories.</p>
+                </section>
+                <br/>
+                <section class="field -req checkboxes">
+                    <label class="field-label">What tools are you or your team currently using for repository management?
+                        <a class="tooltip_link" href="#"><i class="icon-circle _question"></i>
+                            <span class="tooltip">Repository management may include creating and monitoring VCS repositories, creating and merging branches, keeping track of new commits, browsing code in prior revisions, watching diffs associated with commits, and visualizing commit statistics.</span>
+                        </a>
+                    </label>
+                    <label for="mktoCheckbox_2847_0" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_0" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="GitHub"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        GitHub
+                    </label>
+                    <label for="mktoCheckbox_2847_1" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_1" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="GitHub Enterprise"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        GitHub Enterprise
+                    </label>
+                    <label for="mktoCheckbox_2847_2" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_2" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="Bitbucket"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Bitbucket
+                    </label>
+                    <label for="mktoCheckbox_2847_3" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_3" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="Atlassian Stash"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Atlassian Stash
+                    </label>
+                    <label for="mktoCheckbox_2847_4" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_4" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="Atlassian FishEye"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Atlassian FishEye
+                    </label>
+                    <label for="mktoCheckbox_2847_5" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_5" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="GitLab"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        GitLab
+                    </label>
+                    <label for="mktoCheckbox_2847_6" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_6" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="Other"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Other
+                    </label>
+                    <label for="mktoCheckbox_2847_7" class="inline block60">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2847_7" name="usedRepositoryManagementTools[]" class="required checkbox__input" value="Not using any repository management tools"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Not using any repository management tools
+                    </label>
+                </section>
+                <br/>
+                <section class="field -req checkboxes">
+                    <label class="field-label">Are you or your team using any of the following tools to conduct code reviews?</label>
+                    <label for="mktoCheckbox_2848_0" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_0" name="Cplus_file_size[]" class="required checkbox__input" value="Atlassian Crucible"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Atlassian Crucible
+                    </label>
+                    <label for="mktoCheckbox_2848_1" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_1" name="Cplus_file_size[]" class="required checkbox__input" value="Review Board"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Review Board
+                    </label>
+                    <label for="mktoCheckbox_2848_2" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_2" name="Cplus_file_size[]" class="required checkbox__input" value="Gerrit"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Gerrit
+                    </label>
+                    <label for="mktoCheckbox_2848_3" class="inline block40">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_3" name="Cplus_file_size[]" class="required checkbox__input" value="Phabricator Differential"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Phabricator Differential
+                    </label>
+                    <label for="mktoCheckbox_2848_4" class="inline block55">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_4" name="Cplus_file_size[]" class="required checkbox__input" value="Not currently conducting code reviews"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Not currently conducting code reviews
+                    </label>
+                    <label for="mktoCheckbox_2848_5" class="label-wrapper inline block80">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2848_5" name="Cplus_file_size[]" class="required checkbox__input" value="Using code review functionality that is built in repository management tool (such as pull or merge requests)"/>
+                            <span class="checkbox__button"></span>
+                        </span>
+                        Using code review functionality that is built in repository management tool (such as pull or merge requests)
+                    </label>
+                </section>
+                <br/>
+                <section>
+                    <label for="agreement" class="label-wrapper -req">
+                        <span class="checkbox">
+                            <input type="checkbox" id="agreement" name="agreement" class="btn-disabled checkbox__input" value="agreement">
+                            <span class="checkbox__button"></span>
+                        </span>
+                        By downloading, installing, copying, saving on your computer, or otherwise using this software, you are becoming a party to <a href="license.html">JetBrains license agreement</a> and you are consenting to be bound by all the terms and conditions of this agreement.
+                    </label>
+                </section>
+                <hr class="markoff"/>
+                <div class="leftfloated block80">
+                    <label for="mktoCheckbox_2849_0" class="label-wrapper">
+                        <span class="checkbox">
+                            <input type="checkbox" id="mktoCheckbox_2849_0" name="sendCommunityNewsletter" class="checkbox__input">
+                            <span class="checkbox__button"></span>
+                        </span>
+                        <span class="note">I agree that JetBrains may use my personal information provided in this registration form under the terms of <a
+                                href="../../company/privacy.html">JetBrains privacy policy</a> in order to provide relevant services on the basis of this registration
+                            and to send me the information I requested.</span>
+                    </label>
+                </div>
+                <div class="rightfloated block20 right-align">
+                    <button class="btn-flat wide -size1 -disabled" disabled="disabled"> Sign up </button>
+                </div>
+                <br class="clr"/>
+            </fieldset>
+            <input type="hidden" name="subId" value="62" />
+            <input type="hidden" name="formid" value="1323" />
+            <input type="hidden" name="returnURL" class="returnURL" value="download_thanks.jsp?os=eap" />
+            <input type="hidden" name="retURL" class="returnURL" value="download_thanks.jsp?os=eap" />
+        </form>
+    </div>
+</cache:cache>
+
+                                </div>
+        <aside>
+                    </aside>
+        <br class="clr"/>
+    </div>
+    </div>
+
+
+
+
+
+
+<div class="footer-main-emulator"></div>
+<footer class="footer-main">
+     <div class="container footer-long">
+        <div class="leftfloated block30 products">
+        <div class="block75">
+            <h3>all products</h3>
+            <ul>
+                <li><a href="/idea/">IntelliJ IDEA</a></li>
+                <li><a href="/resharper/">ReSharper</a></li>
+                <li><a href="/webstorm/">WebStorm</a></li>
+                <li><a href="/phpstorm/">PhpStorm</a></li>
+                <li><a href="/pycharm/">PyCharm</a></li>
+                <li><a href="/ruby/">RubyMine</a></li>
+                <li><a href="/objc/">AppCode</a></li>
+                <li><a href="/youtrack/">YouTrack</a></li>
+                <li><a href="/teamcity/">TeamCity</a></li>
+                <li><a href="/profiler/">dotTrace</a></li>
+                <li><a href="/dotmemory/">dotMemory</a></li>
+                <li><a href="/dotcover/">dotCover</a></li>
+                <li><a href="/dotpeek/">dotPeek</a></li>
+                <li><a href="/mps/">MPS</a></li>
+                <li><a href="/kotlin/">Kotlin</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="leftfloated block20">
+            <h3>resources</h3>
+            <ul>
+                <li><a href="/devnet/">Developer Community</a></li>
+                <li><a href="/support/">Support</a></li>
+                <li><a href="https://www.youtube.com/user/JetBrainsTV">JetBrains TV</a></li>
+                <li><a href="http://blogs.jetbrains.com/">Blogs</a></li>
+                <li><a href="/devnet/webinars/">Upcoming Webinars</a></li>
+            </ul>
+        </div>
+        <div class="leftfloated block20">
+            <h3>company</h3>
+            <ul>
+                <li><a href="/company/contacts/">Contact Us</a></li>
+                <li><a href="/partners/">Partners</a></li>
+                <li><a href="/company/customers/">Customer List</a></li>
+                <li><a href="/company/customers/testimonials.html">Testimonials</a></li>
+                <li><a href="/company/jobs/">Jobs</a></li>
+            </ul>
+        </div>
+        <div class="rightfloated block25 contacts_sub">
+            <ul class="social">
+                <li class="facebook"><a href="http://www.facebook.com/JetBrains">Facebook</a></li>
+                <li class="gPlus"><a href="https://plus.google.com/+jetbrains/">Google+</a></li>
+                <li class="in"><a href="http://www.linkedin.com/company/jetbrains">LinkedIn</a></li>
+                <li class="twitter"><a href="http://twitter.com/#!/jetbrains">Twitter</a></li>
+                <li class="youtube"><a href="https://www.youtube.com/user/JetBrainsTV">YouTube</a></li>
+                <li class="weibo empty"></li>
+                <li class="rss"><a href="/rss.xml">JetBrains RSS</a></li>
+            </ul>
+                        <div class="newsletter-block">
+                <h6>Get Monthly Newsletter</h6>
+                
+
+<script type='text/javascript' src='/eforms/dwr/interface/SubscriptionService.js'></script>
+<script type='text/javascript' src='/eforms/dwr/engine.js'></script>
+<script type="text/javascript">
+    function trim(str) {
+        return str.replace(/^\s+|\s+$/g, '');
+    }
+    function errMsg(state) {
+        var msg = document.getElementById('error-msg');
+        if (state)msg.style.display = 'block';
+        else msg.style.display = 'none';
+    }
+    function validateEmail(valfield) {
+        var tfld = trim(valfield.value);
+        var email = /^[^@]+@[^@.]+\.[^@]*\w\w$/  ;
+        if (!email.test(tfld)) {
+            errMsg(true);
+            return false;
+        }
+        errMsg(false);
+        return true;
+    }
+    function Proceed() {
+        var el = document.getElementById('emaiForSubscription');
+        if (!validateEmail(el)) {
+            el.focus();
+            return;
+        }
+        document.getElementById('sForm').style.display = "none";
+        document.getElementById('progress').style.display = "block";
+        var request = {
+            email: document.getElementById('emaiForSubscription').value,
+            topic: "jb.community.newsletter"
+        };
+        SubscriptionService.submitSubscriptionRequest(request, {
+            callback: function (result) {
+                setMessage(result ? "You request has been processed! Please check your mailbox." : "Internal error.");
+            },
+            timeout: 30000,
+            errorHandler:function(message) {
+                setMessage("Oops: " + message);
+            }
+        });
+        function setMessage(text) {
+            var span = document.getElementById("formContainer");
+            span.style.display = "block";
+            span.innerHTML = text;
+            document.getElementById('progress').style.display = "none";
+        }
+    }
+    function doBlurOn(el) {
+        if (el.value == '') {
+            el.value = 'E-mail JetBrains news to me';
+            el.style.color = '#bcbcbc';
+        }
+    }
+    function doFocusOn(el) {
+        if (el.value == 'E-mail JetBrains news to me') {
+            el.value = '';
+            el.style.color = '#333';
+        }
+    }
+</script>
+<dl id="submitionContent" class="newsletter">
+    <dd id="formContainer">
+        <form action="javascript:get();" name="sForm" id="sForm">
+            <input class="text required" name="emaiForSubscription" id="emaiForSubscription" value="E-mail JetBrains news to me" onblur="doBlurOn(this)" onfocus="doFocusOn(this)"/>
+            <input type="submit" class="submit" id="button" value="Subscribe" onclick="Proceed();"/>
+            <span class="msg" id="error-msg" style="display:none;">Incorrect e-mail address</span>
+        </form>
+    </dd>
+    <dd id="progress" style="display:none;"></dd>
+</dl>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#sForm').submit(function() {
+            var mail = $('#emaiForSubscription').val();
+            if (mail) {
+                var mktoData = {};
+                mktoData[MKTO_SOURCE_FIELD] = 'email-subscription';
+                mktoDoAsync(mail, mktoData);
+            }
+            return false;
+        });
+    });
+</script>
+
+                <br class="clr"/>
+            </div>
+                        <h6 class="contacts">Contacts:</h6>
+            <ul>
+                <li><a href="/company/contacts/">Sales Team</a></li>
+                <li><a href="mailto:marketing@jetbrains.com">Marketing Team</a></li>
+                <li><a href="mailto:webmaster@jetbrains.com">Webmaster</a></li>
+            </ul>
+        </div>
+        <br class="clr"/>
+    </div>
+    <div class="container footer-short">
+        <p class="rightfloated gray right-align">&copy; 2000-2014 JetBrains s.r.o. All rights reserved<br/>Developed with <a href="/webstorm">WebStorm</a></p>
+        <ul class="block35">
+            <li><a href="/company/privacy.html">Privacy Policy</a></li>
+            <li><a href="/company/useterms.html">Terms of Use</a></li>
+            <li><a href="/map.html">Site map</a></li>
+        </ul>
+        <br class="clr"/>
+    </div>
+</footer>
+                                                                                                                                                                                                                                                                        <script type="text/javascript" src="/js2/search.js"></script>
+
+
+
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/6939.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script></body>
+</html>

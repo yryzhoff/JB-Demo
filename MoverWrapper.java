@@ -20,3 +20,8 @@ class MoverWrapper {
     assert myInfo.toMove2 != null;
     myMover.beforeMove(editor, myInfo, myIsDown);
     final Document document = editor.getDocument();
+
+ if (new TextRange(start, end).intersectsStrict(new TextRange(start2, end2))) {
+    TextRange range = new TextRange(start, end);
+    TextRange range2 = new TextRange(start2, end2);
+    if (range.intersectsStrict(range2) && !range.equals(range2)) {

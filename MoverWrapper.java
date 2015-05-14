@@ -24,4 +24,4 @@ class MoverWrapper {
  if (new TextRange(start, end).intersectsStrict(new TextRange(start2, end2))) {
     TextRange range = new TextRange(start, end);
     TextRange range2 = new TextRange(start2, end2);
-    if (range.intersectsStrict(range2) && !range.equals(range2)) {
+    

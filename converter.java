@@ -5,21 +5,13 @@ public class IntToText {
                                                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
     private static final String[] DECADES = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
-    /**
-     * Convert any value from 0 to 999 inclusive, to a string.
-     * @param value The value to convert.
-     * @param and whether to use the word 'and' in the output.
-     * @return a String representation of the value.
-     */
     private static final String tripleAsText(int value, boolean and) {
         if (value < 0 || value >= 1000) {
             throw new IllegalArgumentException("Illegal triple-value " + value);
         }
-
         if (value < SUBTWENTY.length) {
             return SUBTWENTY[value];
         }
-
         int subhun = value % 100;
         int hun = value / 100;
         StringBuilder sb = new StringBuilder(50);
@@ -43,7 +35,6 @@ public class IntToText {
                 }
             }
         }
-
         return sb.toString();
     }
 

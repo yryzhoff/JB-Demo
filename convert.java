@@ -104,4 +104,4 @@ public class IntToText {
     }
 }
 
-// fix string representation
+

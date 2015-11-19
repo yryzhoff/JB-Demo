@@ -1,47 +1,56 @@
 public class IntToText {
 
-   private static final String[] SCALES = {"", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion"};
-private static final String[] SUBTWENTY = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-                                           "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-private static final String[] DECADES = {"", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    private static final String[] SCALES = {"", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion"};
+    private static final String[] SUBTWENTY = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+                                               "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    private static final String[] DECADES = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
-/**
- * Convert any value from 0 to 999 inclusive, to a string.
- * @param value The value to convert.
- * @param and whether to use the word 'and' in the output.
- * @return a String representation of the value.
- */
-
-private static final String tripleAsText(int value, boolean and) {
-    int subhun = value % 100;
-    int hun = value / 100;
-    StringBuilder sb = new StringBuilder(50);
-    if (hun > 0) {
-        sb.append(SUBTWENTY[hun]).append(" hundred ");
-        if (subhun > 0 && and) {
-            sb.append("and ");
+    /**
+     * Convert any value from 0 to 999 inclusive, to a string.
+     * @param value The value to convert.
+     * @param and whether to use the word 'and' in the output.
+     * @return a String representation of the value.
+     */
+    private static final String tripleAsText(int value, boolean and) {
+        if (value < 0 || value >= 1000) {
+            throw new IllegalArgumentException("Illegal triple-value " + value);
         }
-    }
-    if (subhun < SUBTWENTY.length) {
-        sb.append(SUBTWENTY[subhun]);
-    } else {
-        int tens = subhun / 10;
-        int units = subhun % 10;
-        sb.append(DECADES[tens]);
-        if (units>0) {
-          sb.append(" ");
-        }
-        sb.append(SUBTWENTY[units]);
-    }
 
-    return sb.toString();
-}
+        if (value < SUBTWENTY.length) {
+            return SUBTWENTY[value];
+        }
+
+        int subhun = value % 100;
+        int hun = value / 100;
+        StringBuilder sb = new StringBuilder(50);
+        if (hun > 0) {
+            sb.append(SUBTWENTY[hun]).append(" hundred");
+        }
+        if (subhun > 0) {
+            if (hun > 0) {
+                sb.append(and ? " and " : " ");
+            }
+            if (subhun < SUBTWENTY.length) {
+                sb.append(SUBTWENTY[subhun]);
+            } else {
+                int tens = subhun / 10;
+                int units = subhun % 10;
+                if (tens > 0) {
+                    sb.append(DECADES[tens]);
+                }
+                if (units > 0) {
+                    sb.append(" ").append(SUBTWENTY[units]);
+                }
+            }
+        }
+
+        return sb.toString();
+    }
 
     /**
      * Convert any long input value to a text representation 
      * @param value The value to convert
      * @param useand true if you want to use the word 'and' in the text (eleven thousand and thirteen)
-     * @param negname
      * @return
      */
     public static final String asText(long value, boolean useand, String negname) {
@@ -86,10 +95,12 @@ private static final String tripleAsText(int value, boolean and) {
     }
 
     public static void main(String[] args) {
-        System.out.printf("%15d %s%n", Integer.MIN_VALUE, asText(Integer.MIN_VALUE, true, "negative"));
-        System.out.printf("%15d %s%n", Integer.MAX_VALUE, asText(Integer.MAX_VALUE, true, "negative"));
-        System.out.printf("%15d %s%n", 0, asText(0, true, "negative"));
-        System.out.printf("%15d %s%n", Long.MIN_VALUE, asText(Long.MIN_VALUE, true, "negative"));
-        System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "negative"));
+        System.out.printf("%15d %s%n", Integer.MIN_VALUE, asText(Integer.MIN_VALUE, true, "minus"));
+        System.out.printf("%15d %s%n", Integer.MAX_VALUE, asText(Integer.MAX_VALUE, true, "minus"));
+        System.out.printf("%15d %s%n", 0, asText(0, true, "minus"));
+        System.out.printf("%15d %s%n", Long.MIN_VALUE, asText(Long.MIN_VALUE, true, "minus"));
+        System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
+
+// fix string representation

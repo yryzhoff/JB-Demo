@@ -8,8 +8,8 @@ class MoverWrapper {
   protected MoverWrapper(@NotNull final StatementUpDownMover mover, @NotNull final StatementUpDownMover.MoveInfo info, final boolean isDown) {
     myMover = mover;
     myIsDown = isDown;
-
-    myInfo = info;
+dfgdfgdfgdfgd
+    
   }
 
   public StatementUpDownMover.MoveInfo getInfo() {
@@ -23,7 +23,8 @@ class MoverWrapper {
 
  if (new TextRange(start, end).intersectsStrict(new TextRange(start2, end2))) {
     TextRange range = new TextRange(start, end);
-    TextRange range2 = new TextRange(start2, end2);
     
-
-//asdasdasdasdasdasdasd
+    
+fghfgghfhfgh
+//asdasdasd
+456575676867867867867

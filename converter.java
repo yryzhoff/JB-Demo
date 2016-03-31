@@ -84,7 +84,7 @@ public class IntToText {
             if (thous[scale] > 0) {
                 sb.append(tripleAsText(thous[scale], useand)).append(" ").append(SCALES[scale]);
             }
-
+//fghfghfghfghfggf
         }
 
         if (!first && useand && thous[0] != 0) {
@@ -94,7 +94,7 @@ public class IntToText {
 
         return sb.toString();
     }
-
+//ghjkhhjkhjkhjkhk
     public static void main(String[] args) {
         System.out.printf("%15d %s%n", Integer.MIN_VALUE, asText(Integer.MIN_VALUE, true, "minus"));
         System.out.printf("%15d %s%n", Integer.MAX_VALUE, asText(Integer.MAX_VALUE, true, "minus"));
@@ -104,4 +104,4 @@ public class IntToText {
     }
 }
 
-// fix string representation
+

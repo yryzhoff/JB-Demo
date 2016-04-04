@@ -94,7 +94,7 @@ public class IntToText {
 
         return sb.toString();
     }
-//ghjkhhjkhjkhjkhk
+
     public static void main(String[] args) {
         System.out.printf("%15d %s%n", Integer.MIN_VALUE, asText(Integer.MIN_VALUE, true, "minus"));
         System.out.printf("%15d %s%n", Integer.MAX_VALUE, asText(Integer.MAX_VALUE, true, "minus"));
@@ -103,5 +103,5 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
-
+sdfsdfsdfsdf
 

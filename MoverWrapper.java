@@ -25,8 +25,13 @@ class MoverWrapper {
     TextRange range = new TextRange(start, end);
     TextRange range2 = new TextRange(start2, end2);
     
-111111111111111111222
-234324353
+1111111111sdfsdfsdf
+2343
 werwtertrt
-  4354543=-54
+  43545
+  wertwerterter
+  123124234234
+  222
+  111
+  
   fhfhhfjgt444

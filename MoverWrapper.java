@@ -30,8 +30,6 @@ class MoverWrapper {
 werwtertrt
   43545
   wertwerterter
-  123124234234
-  222
-  111
+ zxczxczxczczc
   
-  fhfhhfjgt444
+ 

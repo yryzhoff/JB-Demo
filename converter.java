@@ -49,9 +49,9 @@ public class IntToText {
 
     /**
      * Convert any long input value to a text representation 
-     * @param value The value to convert
+    
      * @param useand true if you want to use the word 'and' in the text (eleven thousand and thirteen)
-     * @param negname
+     
      * @return
      */
     public static final String asText(long value, boolean useand, String negname) {
@@ -103,3 +103,5 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
+111111111111111111111111
+ssssssssssssssssssssssssssssss

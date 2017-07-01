@@ -3,7 +3,7 @@ public class IntToText {
     private static final String[] SCALES = {"", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion"};
     private static final String[] SUBTWENTY = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                                                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-   
+    private static final String[] DECADES = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
     /**
      * Convert any value from 0 to 999 inclusive, to a string.
@@ -103,11 +103,10 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
-11111111111111111111
+1111
 sssss
 12333444
-2334567678
-fffffffffffffff
+23345
 ddddddddddddd
 22222
 1111

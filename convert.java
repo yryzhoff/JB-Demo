@@ -94,6 +94,9 @@ public class IntToText {
 
         return sb.toString();
     }
+    
+    9999
+        hhhh
 
     public static void main(String[] args) {
         System.out.printf("%15d %s%n", Integer.MIN_VALUE, asText(Integer.MIN_VALUE, true, "minus"));

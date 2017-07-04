@@ -4,11 +4,9 @@ public class IntToText {
     private static final String[] SUBTWENTY = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                                                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
     private static final String[] DECADES = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-
     /**
      * Convert any value from 0 to 999 inclusive, to a string.
      * @param value The value to convert.
-     * @param and whether to use the word 'and' in the output.
      * @return a String representation of the value.
      */
     private static final String tripleAsText(int value, boolean and) {
@@ -104,12 +102,13 @@ public class IntToText {
     }
 }
 1111
-sssss
+ssss
 12333444
 23345
-ddddddddddddd
 22222
+2222
 1111
-9999
+999
 bbbbb
-
+ddddddd
+000000

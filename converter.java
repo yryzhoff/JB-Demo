@@ -101,14 +101,3 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
-1111
-ssss
-12333444
-23345
-22222
-2222
-1111
-999
-bbbbb
-ddddddd
-000000

@@ -6,8 +6,7 @@ public class IntToText {
     private static final String[] DECADES = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
     /**
      * Convert any value from 0 to 999 inclusive, to a string.
-     * @param value The value to convert.
-     * @return a String representation of the value.
+     * @param value The value to convert. 
      */
     private static final String tripleAsText(int value, boolean and) {
         if (value < 0 || value >= 1000) {
@@ -49,8 +48,7 @@ public class IntToText {
      * Convert any long input value to a text representation 
     
      * @param useand true if you want to use the word 'and' in the text (eleven thousand and thirteen)
-     
-     * @return
+          
      */
     public static final String asText(long value, boolean useand, String negname) {
         if (value == 0) {
@@ -101,3 +99,5 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
+kkkkkkkkkkk
+ooooo

@@ -99,5 +99,7 @@ public class IntToText {
         System.out.printf("%15d %s%n", Long.MAX_VALUE, asText(Long.MAX_VALUE, true, "minus"));
     }
 }
-kkkkkkkkkkk
-ooooo
+kkkkkkkkkfff
+oooccccccc
+pppppppp
+00000000

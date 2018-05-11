@@ -106,7 +106,12 @@ public class IntToText {
 
 // fix string representation
 
-kkkkk9999
-oooc66666
-ppllll
-000011111
+kkkkk9
+oooc666
+pplll
+00001111
+ffffffff
+hhhhhhhhh
+uuuuuuuu
+lllll
+bbbb
